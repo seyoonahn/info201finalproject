@@ -9,6 +9,9 @@
 
 library(shiny)
 
+mwdata <- read.csv("Minimum Wage Data.csv")
+urdata <- read.csv("output.csv")
+
 # Define UI for application that draws a histogram
 shinyUI(
     navbarPage("INFO201 Final Project: US Minimum Wage and Unemployment Rate",

@@ -12,6 +12,9 @@ library(ggplot2)
 library(maps)
 library(dplyr)
 
+mwdata <- read.csv("Minimum Wage Data.csv")
+urdata <- read.csv("output.csv")
+
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
 
