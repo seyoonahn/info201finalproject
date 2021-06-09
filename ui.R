@@ -8,7 +8,6 @@
 #
 
 library(shiny)
-
 mwdata <- read.csv("Minimum Wage Data.csv")
 urdata <- read.csv("output.csv")
 
@@ -18,16 +17,15 @@ shinyUI(
                tabPanel("Unemployment Rate Correlation with Minimum Wage",
                         sidebarLayout(
                             sidebarPanel(
-                                sliderInput("bins",
-                                            "Number of bins:",
-                                            min = 1,
-                                            max = 50,
-                                            value = 30)
+                              radioButtons("radio2",
+                                           "Minimum Wage vs Unemployment Rate",
+                                           choices = list("Unemplyment Rate" = 1, "Effective Minimum Wage" = 2), 
+                                           selected = 1)
                             ),
                             
                             # Show a plot of the generated distribution
                             mainPanel(
-                                ##plotOutput("distPlot")
+                                plotOutput("Plot3")
                             ))),
                tabPanel("State Minimum Wages",
                         sidebarLayout(

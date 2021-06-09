@@ -35,8 +35,12 @@ shinyServer(function(input, output) {
         }
     })
     
-    output$Map <- renderPlot({
-        maps()
+    output$Plot3 <- renderPlot({
+        if(input$radio2 == "1"){
+            ggplot(data = urdata3, aes(x = Year, y = Rate)) + geom_bar(stat = "identity", fill = "purple")
+        }else{
+            ggplot(data = mwdata6, aes(x = Year, y = Effective_Min_Wage)) + geom_bar(stat = "identity", fill = "red")
+        }
     })
     
     output$summary <- renderText({
